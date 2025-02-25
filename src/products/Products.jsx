@@ -25,7 +25,8 @@ function Products({ products, increment, decrement, changeTheme, theme, resetBut
                      {products.map((product, index) => (
                           <Item key={index} product={product} increment={increment} decrement={decrement} changeTheme={changeTheme} theme={theme} deleteItem={deleteItem} />
                      ))}
-                    <h1 className='text-3xl text-red-600'>Total paid : {calcTotal} </h1>
+                    <h1 className='text-3xl text-red-600'>
+                        Total paid : {products.map((product) => product.price * product.items ).reduce((total,product)=>total+product ,0)} </h1>
                 </div>}
                 
             </div>
